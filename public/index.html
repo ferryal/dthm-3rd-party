@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greeter Component Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .demo-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+        background-color: #f9f9f9;
+      }
+      h1,
+      h2 {
+        color: #333;
+      }
+      pre {
+        background-color: #f1f1f1;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Greeter Component Demo</h1>
+
+    <div class="demo-card">
+      <h2>Default Configuration</h2>
+      <div id="greeter-default"></div>
+    </div>
+
+    <div class="demo-card">
+      <h2>Custom Message</h2>
+      <div id="greeter-custom"></div>
+    </div>
+
+    <div class="demo-card">
+      <h2>Custom Button Text</h2>
+      <div id="greeter-button"></div>
+    </div>
+
+    <div class="demo-card">
+      <h2>Custom Toast Duration (5 seconds)</h2>
+      <div id="greeter-toast-duration"></div>
+    </div>
+
+    <h2>Example Integration Code</h2>
+    <pre>
+&lt;script src="greeter-component.js"&gt;&lt;/script&gt;
+&lt;div id="my-component"&gt;&lt;/div&gt;
+&lt;script&gt;
+  Greeter.init('#my-component', { 
+    message: 'Hello from the host app!',
+    buttonText: 'Click me',  // Optional
+    toastDuration: 3000      // Optional, milliseconds
+  });
+&lt;/script&gt;
+  </pre
+    >
+
+    <!-- Script tags to load and initialize the component -->
+    <script src="greeter-component.js"></script>
+    <script>
+      // Initialize with default settings
+      Greeter.init("#greeter-default");
+
+      // Initialize with custom message
+      Greeter.init("#greeter-custom", {
+        message: "Hello from the host app!",
+      });
+
+      // Initialize with custom button text
+      Greeter.init("#greeter-button", {
+        message: "This message has a custom button!",
+        buttonText: "Click for Message",
+      });
+
+      // Initialize with custom toast duration (5 seconds)
+      Greeter.init("#greeter-toast-duration", {
+        message: "This toast stays visible for 5 seconds!",
+        buttonText: "Show Long Toast",
+        toastDuration: 5000,
+      });
+    </script>
+  </body>
+</html>
