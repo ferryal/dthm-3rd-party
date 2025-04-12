@@ -32,12 +32,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new VueLoaderPlugin(),
-    new MiniCssExtractPlugin({
-      filename: "greeter-component.css",
-    }),
-  ],
+  plugins: [new VueLoaderPlugin()],
   resolve: {
     extensions: [".js", ".vue"],
   },
