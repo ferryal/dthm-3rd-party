@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import { pinia, useGreeterStore } from "./store";
 import Greeter from "./Greeter.vue";
+import TestResults from "./TestResults.vue";
 
 // Global object that will be exposed to the browser
 window.Greeter = {
@@ -22,6 +23,22 @@ window.Greeter = {
     if (options.buttonText) {
       store.setButtonText(options.buttonText);
     }
+
+    // Find the target element and mount
+    const targetElement = document.querySelector(selector);
+    if (!targetElement) {
+      console.error(`Element ${selector} not found`);
+      return;
+    }
+
+    app.mount(targetElement);
+
+    return app;
+  },
+
+  // New method to initialize the test runner
+  initTestRunner(selector) {
+    const app = createApp(TestResults);
 
     // Find the target element and mount
     const targetElement = document.querySelector(selector);
