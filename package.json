@@ -5,6 +5,7 @@
   "main": "dist/greeter-component.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
+    "vercel-build": "webpack --config webpack.config.js",
     "dev": "webpack serve --config webpack.config.dev.js",
     "test": "vitest run",
     "test:watch": "vitest"
